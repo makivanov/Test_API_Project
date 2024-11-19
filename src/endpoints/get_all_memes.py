@@ -1,7 +1,7 @@
 import allure
 import requests
 
-from src.endpoints.base_endpoint import BaseEndpoint
+from endpoints.base_endpoint import BaseEndpoint
 
 
 class GetAllMemes(BaseEndpoint):
