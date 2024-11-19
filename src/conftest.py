@@ -1,5 +1,6 @@
 import random
 
+import allure
 import pytest
 
 from endpoints.add_meme import AddMeme

@@ -4,7 +4,11 @@ import pytest
 from test_data.meme_test_data import one_meme_test_data
 
 
+@allure.feature("Тесты для удаления мема")
+
+
 @allure.step("Тест удаление мема пользователем, который его создал")
+@allure.title("Тест удаление мема пользователем, который его создал")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
 def test_delete_meme_positive(create_meme, delete_meme, create_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -14,6 +18,7 @@ def test_delete_meme_positive(create_meme, delete_meme, create_test_data):
 
 
 @allure.step("Тест удаление мема не автором")
+@allure.title("Тест удаление мема не автором")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
 def test_delete_meme_no_autor(create_meme, delete_meme, create_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -24,6 +29,7 @@ def test_delete_meme_no_autor(create_meme, delete_meme, create_test_data):
 
 
 @allure.step("Тест удаление мема без авторизации")
+@allure.title("Тест удаление мема без авторизации")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
 def test_delete_meme_no_autorization(create_meme, delete_meme, create_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -34,6 +40,7 @@ def test_delete_meme_no_autorization(create_meme, delete_meme, create_test_data)
 
 
 @allure.step("Тест удаление мема со случайным токеном")
+@allure.title("Тест удаление мема со случайным токеном")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
 def test_delete_meme_random_token(create_meme, delete_meme, create_test_data):
     create_meme.add_meme(payload=create_test_data)
