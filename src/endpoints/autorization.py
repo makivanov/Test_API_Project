@@ -7,7 +7,7 @@ from endpoints.base_endpoint import BaseEndpoint
 
 
 class Authorization(BaseEndpoint):
-    def __init__(self, name:str = None):
+    def __init__(self, name: str = None):
         super().__init__()
         self.user = name
 
@@ -29,7 +29,7 @@ class Authorization(BaseEndpoint):
 
     @allure.step("Проверка актуальности токена")
     def check_token(self):
-        url = f"{self.url}/{self.endpoint["authorize"]}/{self.token}"
+        url = f"{self.url}/{self.endpoint['authorize']}/{self.token}"
         print(url)
         response = requests.get(url, headers=self.headers)
         assert "Token is alive" in response.text == True

@@ -1,11 +1,10 @@
 import json
 import logging
-import string
 import random
-
-import logger
+import string
 
 import allure
+import logger
 import requests
 
 from check_status import CheckStatus
@@ -50,7 +49,6 @@ class BaseEndpoint(CheckStatus):
                 self.headers["Authorization"] = self.token
                 break
 
-
     def check_2_dict(self, payload: dict, response_json: dict):
         response_keys_set = set(response_json.keys())
         payload_keys_set = set(payload.keys())
@@ -69,7 +67,7 @@ class BaseEndpoint(CheckStatus):
 
     @allure.step("Проверка что с сервера получены корректные данные")
     def check_upload_data(self, payload: dict):
-        url = f"{self.url}/{self.endpoint["meme"]}/{self.meme_id}"
+        url = f"{self.url}/{self.endpoint['meme']}/{self.meme_id}"
         response = requests.get(url, headers=self.headers)
         try:
             response_json = response.json()

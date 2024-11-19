@@ -13,6 +13,7 @@ def test_authorization_positive(name):
     auth.check_that_status_is_200()
     del auth
 
+
 @allure.step("Тест авторизации с некорректными данными")
 @pytest.mark.parametrize("name", name_negative)
 def test_authorization_negative(name):
@@ -20,6 +21,7 @@ def test_authorization_negative(name):
     auth.get_token()
     auth.check_that_status_is_400()
     del auth
+
 
 @allure.step("Тест авторизации без данных")
 def test_authorization_without_name():
