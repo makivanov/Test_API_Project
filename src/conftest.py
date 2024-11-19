@@ -11,8 +11,8 @@ from test_data.authorization_test_data import AUTHORIZATION_NAME
 
 
 @pytest.fixture(scope="session")
-def authorization(test_name=AUTHORIZATION_NAME):
-    name = random.choice(test_name)
+def authorization(names=AUTHORIZATION_NAME):
+    name = random.choice(names)
     return Authorization(name)
 
 @pytest.fixture()
