@@ -32,4 +32,4 @@ class Authorization(BaseEndpoint):
         url = f"{self.url}/{self.endpoint['authorize']}/{self.token}"
         print(url)
         response = requests.get(url, headers=self.headers)
-        assert "Token is alive" in response.text == True
+        assert "Token is alive" in response.text is True
