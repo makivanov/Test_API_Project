@@ -12,6 +12,7 @@ def test_get_meme_positive(test_data, create_meme, get_meme):
     get_meme.check_that_status_is_200()
     get_meme.check_upload_data(payload=test_data)
 
+
 @allure.step("Тест получения мема с некорректным id")
 @pytest.mark.parametrize("test_data", incorrect_id_test_data)
 def test_get_meme_incorrect_id(test_data, create_meme, get_meme):
@@ -46,6 +47,7 @@ def test_get_meme_with_random_token(test_data, create_meme, get_meme):
     get_meme.set_randon_token()
     get_meme.get_meme(meme_id=create_meme.meme_id)
     get_meme.check_that_status_is_401()
+
 
 @allure.step("Тест получения мема с несуществующим id")
 @pytest.mark.parametrize("test_data", one_meme_test_data)

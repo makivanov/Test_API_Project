@@ -7,9 +7,8 @@ one_meme_test_data = [
             "color": [],
             "size": {}
         }
-        },
-    ]
-
+    },
+]
 
 one_change_mem_test_data = [
     {
@@ -20,8 +19,8 @@ one_change_mem_test_data = [
             "color": ["blue", "red"],
             "size": {"big": "big"}
         }
-        },
-    ]
+    },
+]
 
 meme_positive_test_data = [
     {
@@ -33,13 +32,13 @@ meme_positive_test_data = [
         }
     },
     {
-        "text": "Meme 1",
-        "text": "Meme 2",
+        "text": "Meme 1",  # noqa: F601
+        "text": "Meme 2",  # noqa: F601
         "url": "l",
         "tags": [1, 3],
         "info": {
-            "id": 11,
-            "id": 12
+            "id": 11,  # noqa: F601
+            "id": 12  # noqa: F601
         },
         "error": 7
     },
@@ -56,7 +55,6 @@ meme_positive_test_data = [
     }
 
 ]
-
 
 meme_negative_test_data = [
     {

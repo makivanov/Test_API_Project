@@ -11,9 +11,10 @@ from test_data.authorization_test_data import AUTHORIZATION_NAME
 
 
 @pytest.fixture(scope="session")
-def authorization(test_name=AUTHORIZATION_NAME):
-    name = random.choice(test_name)
+def authorization(names=AUTHORIZATION_NAME):
+    name = random.choice(names)
     return Authorization(name)
+
 
 @pytest.fixture()
 def token(authorization):
@@ -27,6 +28,7 @@ def create_meme(token):
     meme_for_delete = DeleteMeme(token=token)
     if meme.meme_id:
         meme_for_delete.delete_meme(meme.meme_id)
+
 
 @pytest.fixture()
 def get_meme(token):
@@ -44,6 +46,7 @@ def change_meme(token):
     meme_for_delete = DeleteMeme(token=token)
     if meme.meme_id:
         meme_for_delete.delete_meme(meme.meme_id)
+
 
 @pytest.fixture()
 def delete_meme(token):

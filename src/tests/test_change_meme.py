@@ -6,7 +6,7 @@ from test_data.meme_test_data import meme_positive_test_data, one_meme_test_data
 
 
 @allure.step("Тест изменения мема с корректными данными")
-@pytest.mark.parametrize("create_test_data" , one_meme_test_data)
+@pytest.mark.parametrize("create_test_data", one_meme_test_data)
 @pytest.mark.parametrize("change_test_data", meme_positive_test_data)
 def test_change_meme_positive(create_meme, change_meme, create_test_data, change_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -16,7 +16,7 @@ def test_change_meme_positive(create_meme, change_meme, create_test_data, change
 
 
 @allure.step("Тест изменения мема с некорректными данными")
-@pytest.mark.parametrize("create_test_data" , one_meme_test_data)
+@pytest.mark.parametrize("create_test_data", one_meme_test_data)
 @pytest.mark.parametrize("change_test_data", meme_negative_test_data)
 def test_change_meme_negative(create_meme, change_meme, create_test_data, change_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -26,7 +26,7 @@ def test_change_meme_negative(create_meme, change_meme, create_test_data, change
 
 
 @allure.step("Тест изменения мема без авторизации")
-@pytest.mark.parametrize("create_test_data" , one_meme_test_data)
+@pytest.mark.parametrize("create_test_data", one_meme_test_data)
 @pytest.mark.parametrize("change_test_data", one_change_mem_test_data)
 def test_change_meme_without_authorization(create_meme, change_meme, create_test_data, change_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -37,7 +37,7 @@ def test_change_meme_without_authorization(create_meme, change_meme, create_test
 
 
 @allure.step("Тест изменения мема со случайным токеном")
-@pytest.mark.parametrize("create_test_data" , one_meme_test_data)
+@pytest.mark.parametrize("create_test_data", one_meme_test_data)
 @pytest.mark.parametrize("change_test_data", one_change_mem_test_data)
 def test_change_meme_with_random_token(create_meme, change_meme, create_test_data, change_test_data):
     create_meme.add_meme(payload=create_test_data)
@@ -48,7 +48,7 @@ def test_change_meme_with_random_token(create_meme, change_meme, create_test_dat
 
 
 @allure.step("Тест изменения мема пользователем с другим именем")
-@pytest.mark.parametrize("create_test_data" , one_meme_test_data)
+@pytest.mark.parametrize("create_test_data", one_meme_test_data)
 @pytest.mark.parametrize("change_test_data", one_change_mem_test_data)
 def test_change_meme_with_different_name(create_meme, change_meme, create_test_data, change_test_data):
     create_meme.add_meme(payload=create_test_data)

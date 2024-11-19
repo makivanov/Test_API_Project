@@ -28,6 +28,7 @@ def test_add_meme_without_authorization(test_data, create_meme):
     create_meme.add_meme(payload=test_data)
     create_meme.check_that_status_is_401()
 
+
 @allure.step("Тест создания мема со случайным токеном")
 @pytest.mark.parametrize("test_data", one_meme_test_data)
 def test_add_meme_with_random_token(test_data, create_meme):
