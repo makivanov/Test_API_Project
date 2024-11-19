@@ -15,6 +15,7 @@ def authorization(names=AUTHORIZATION_NAME):
     name = random.choice(names)
     return Authorization(name)
 
+
 @pytest.fixture()
 def token(authorization):
     return authorization.get_token()
@@ -27,6 +28,7 @@ def create_meme(token):
     meme_for_delete = DeleteMeme(token=token)
     if meme.meme_id:
         meme_for_delete.delete_meme(meme.meme_id)
+
 
 @pytest.fixture()
 def get_meme(token):
@@ -44,6 +46,7 @@ def change_meme(token):
     meme_for_delete = DeleteMeme(token=token)
     if meme.meme_id:
         meme_for_delete.delete_meme(meme.meme_id)
+
 
 @pytest.fixture()
 def delete_meme(token):

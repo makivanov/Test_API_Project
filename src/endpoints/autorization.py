@@ -13,7 +13,7 @@ class Authorization(BaseEndpoint):
 
     @allure.step("Получение токена")
     def get_token(self):
-        url = f"{self.url}/{self.endpoint["authorize"]}"
+        url = f"{self.url}/{self.endpoint['authorize']}"
         payload = None
         if self.user is not None:
             payload = {

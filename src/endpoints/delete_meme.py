@@ -9,7 +9,7 @@ class DeleteMeme(BaseEndpoint):
     @allure.step("Удаление мема")
     def delete_meme(self, meme_id):
         self.meme_id = meme_id
-        url = f"{self.url}/{self.endpoint["meme"]}/{self.meme_id}"
+        url = f"{self.url}/{self.endpoint['meme']}/{self.meme_id}"
         self.response = requests.delete(url, headers=self.headers)
         return self.response
 

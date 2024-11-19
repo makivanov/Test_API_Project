@@ -43,7 +43,7 @@ class BaseEndpoint(CheckStatus):
             new_user = random.choice(AUTHORIZATION_NAME)
             if self.user != new_user:
                 self.user = new_user
-                url = f"{self.url}/{self.endpoint["authorize"]}"
+                url = f"{self.url}/{self.endpoint['authorize']}"
                 payload = {"name": self.user}
                 response = requests.post(url, json=payload, headers=self.headers)
                 self.token = response.json()["token"]

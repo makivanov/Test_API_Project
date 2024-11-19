@@ -7,9 +7,8 @@ one_meme_test_data = [
             "color": [],
             "size": {}
         }
-        },
-    ]
-
+    },
+]
 
 one_change_mem_test_data = [
     {
@@ -20,8 +19,8 @@ one_change_mem_test_data = [
             "color": ["blue", "red"],
             "size": {"big": "big"}
         }
-        },
-    ]
+    },
+]
 
 meme_positive_test_data = [
     {
@@ -56,7 +55,6 @@ meme_positive_test_data = [
     }
 
 ]
-
 
 meme_negative_test_data = [
     {
