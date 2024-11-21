@@ -5,8 +5,6 @@ from test_data.meme_test_data import one_meme_test_data, incorrect_id_test_data
 
 
 @allure.feature("Тесты для получения мема")
-
-
 @allure.step("Тест получения мема")
 @allure.title("Тест получения мема")
 @pytest.mark.parametrize("test_data", one_meme_test_data)

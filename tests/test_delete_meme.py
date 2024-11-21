@@ -5,8 +5,6 @@ from test_data.meme_test_data import one_meme_test_data
 
 
 @allure.feature("Тесты для удаления мема")
-
-
 @allure.step("Тест удаление мема пользователем, который его создал")
 @allure.title("Тест удаление мема пользователем, который его создал")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)

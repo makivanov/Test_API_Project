@@ -6,7 +6,6 @@ from test_data.authorization_test_data import name_positive, name_negative
 
 
 @allure.feature("Тесты для авторизации")
-
 @allure.step("Тест авторизации с корректными данными")
 @allure.title("Тест авторизации с корректными данными")
 @pytest.mark.parametrize("name", name_positive)

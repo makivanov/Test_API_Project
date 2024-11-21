@@ -6,8 +6,6 @@ from test_data.meme_test_data import meme_positive_test_data, one_meme_test_data
 
 
 @allure.feature("Тесты для изменения мема")
-
-
 @allure.step("Тест изменения мема с корректными данными")
 @allure.title("Тест изменения мема с корректными данными")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
