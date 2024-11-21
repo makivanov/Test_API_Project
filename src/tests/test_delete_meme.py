@@ -10,11 +10,11 @@ from test_data.meme_test_data import one_meme_test_data
 @allure.step("Тест удаление мема пользователем, который его создал")
 @allure.title("Тест удаление мема пользователем, который его создал")
 @pytest.mark.parametrize("create_test_data", one_meme_test_data)
-def test_delete_meme_positive(create_meme, delete_meme, create_test_data):
+def test_delete_meme_positive(create_meme, get_meme, delete_meme, create_test_data):
     create_meme.add_meme(payload=create_test_data)
     delete_meme.delete_meme(meme_id=create_meme.meme_id)
     delete_meme.check_that_status_is_200()
-    delete_meme.check_missing()
+    get_meme.check_missing(meme_id=create_meme.meme_id)
 
 
 @allure.step("Тест удаление мема не автором")
