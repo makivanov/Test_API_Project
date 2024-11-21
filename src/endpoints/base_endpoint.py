@@ -7,12 +7,11 @@ import allure
 import logger
 import requests
 
-from check_status import CheckStatus
 from settings import BASE_URL
 from test_data.authorization_test_data import AUTHORIZATION_NAME
 
 
-class BaseEndpoint(CheckStatus):
+class BaseEndpoint():
     def __init__(self, url: str = BASE_URL, token: str = None):
         super().__init__()
         self.token = token

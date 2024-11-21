@@ -3,10 +3,11 @@ import json
 import allure
 import requests
 
+from check_status import CheckStatus
 from endpoints.base_endpoint import BaseEndpoint
 
 
-class AddMeme(BaseEndpoint):
+class AddMeme(BaseEndpoint, CheckStatus):
     @allure.step("Добавление нового мема")
     def add_meme(self, payload: dict):
         url = f"{self.url}/{self.endpoint['meme']}"

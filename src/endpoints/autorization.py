@@ -3,10 +3,11 @@ import json.decoder
 import allure
 import requests
 
+from check_status import CheckStatus
 from endpoints.base_endpoint import BaseEndpoint
 
 
-class Authorization(BaseEndpoint):
+class Authorization(BaseEndpoint, CheckStatus):
     def __init__(self, name: str = None):
         super().__init__()
         self.user = name
